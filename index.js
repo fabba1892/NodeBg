@@ -1,10 +1,8 @@
-const http = require("http");
-const hostname = "localhost";
+const express = require("express");
 const port = 8000;
-const SkillServer = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.write("Awe from CapeTeewn");
-  res.end();
+const app = express();
+app.get("/", (req, res) => res.send("Awe from Parow"));
+
+app.listen(port, function () {
+  console.log("Listening" + port);
 });
-////////////////////////////////
-SkillServer.listen(port, hostname);
